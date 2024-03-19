@@ -1,7 +1,76 @@
 .menu {
+    display: flex;
     position: absolute;
     bottom: 0;
     height: 10vh;
     width: 100vw;
     background-color: #455D7A;
+}
+
+.menuBtn {
+    flex: 1;
+    background-color: #455D7A;
+    border: none;
+}
+
+.homeBtn {
+    background-image: url("../../../public/img/homeWhite.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.homeBtn:hover {
+    background-image: url("../../../public/img/homeYellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.searchBtn {
+    background-image: url("../../../public/img/searchWhite.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.searchBtn:hover {
+    background-image: url("../../../public/img/searchYellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.favoritesBtn {
+    background-image: url("../../../public/img/favoritesWhite.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.favoritesBtn:hover {
+    background-image: url("../../../public/img/favoritesYellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profileBtn {
+    background-image: url("../../../public/img/profileWhite.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.profileBtn:hover {
+    background-image: url("../../../public/img/profileYellow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (min-width: 760px) {
+    .menu {
+        display: none;
+    }
 }

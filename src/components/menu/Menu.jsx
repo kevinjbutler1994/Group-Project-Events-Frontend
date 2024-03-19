@@ -4,7 +4,10 @@ import "./menu.css"
 function Menu() {
   return (
     <div className='menu'>
-        Menu
+        <button className='homeBtn menuBtn'></button>
+        <button className='searchBtn menuBtn'></button>
+        <button className='favoritesBtn menuBtn'></button>
+        <button className='profileBtn menuBtn'></button>
     </div>
   )
 }
