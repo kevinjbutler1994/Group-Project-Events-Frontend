@@ -10,6 +10,7 @@
     width: 100vw;
     background-color: #233142;
     box-sizing: border-box;
+    z-index: 9999;
 }
 
 .helpBtn {
