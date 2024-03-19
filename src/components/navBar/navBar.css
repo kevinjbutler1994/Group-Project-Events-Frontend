@@ -24,6 +24,18 @@
     width: auto;
 }
 
+.helpBtn:hover {
+    background-image: url("../../../public/img/helpYellow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 6vh;
+    aspect-ratio: 1/1;
+    background-color: #233142;
+    border: none;
+    width: auto;
+}
+
 .navBarMenu {
     display: flex;
     justify-content: center;
