@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { boilerPlateData } from "./data.js";
 
-function EventPage() {
-  return (
-    <div>EventPage</div>
-  )
-}
+export default () => {
+  const generateCardsFromData = collection => {
+    return collection.map(item => {
+      return (
+        <div key={item.id}>
+          <h2>{item.name}</h2>
+          <h4>{item.price}</h4>
+          <p>{item.description}</p>
+        </div>
+      );
+    });
+  };
 
-export default EventPage
+  return <>{generateCardsFromData(boilerPlateData)}</>;
+};
