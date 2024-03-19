@@ -1,7 +1,53 @@
 .navBar {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vh;
     top: 0;
     height: 10vh;
     width: 100vw;
     background-color: #233142;
+    box-sizing: border-box;
+}
+
+.helpBtn {
+    background-image: url("../../../public/img/help.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 6vh;
+    aspect-ratio: 1/1;
+    background-color: #233142;
+    border: none;
+    width: auto;
+}
+
+.navBarMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBarMenuBtn {
+    flex: 1;
+    border: none;
+    background-color: #233142;
+    color: white;
+    margin: 0 3vh;
+    font-size: 3vh;
+}
+
+.navBarMenuBtn:hover {
+    color: #FACF5A;
+}
+
+
+
+@media (max-width: 760px) {
+    .computerOptions {
+        display: none;
+    }
 }
