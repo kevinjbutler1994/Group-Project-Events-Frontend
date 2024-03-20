@@ -11,7 +11,6 @@ import LoginPage from "./screens/loginPage/LoginPage.jsx";
 import ProfilePage from "./screens/profilePage/ProfilePage.jsx";
 import EventPage from "./screens/eventPage/EventPage.jsx";
 import HelpPage from "./screens/helpPage/HelpPage.jsx";
-import NavBar from "./components/navBar/NavBar.jsx";
 import SignUpPage from "./screens/signUpPage/signUpPage.jsx";
 import EditProfilePage from "./screens/editProfilePage/EditProfilePage.jsx";
 
@@ -31,8 +30,6 @@ function App() {
 
   return (
     <div className="app">
-      <NavBar />
-      {/* <EventPage /> */}
 
       <Routes>
         <Route path="/" element={<HomePage setUser={setUser} />} />

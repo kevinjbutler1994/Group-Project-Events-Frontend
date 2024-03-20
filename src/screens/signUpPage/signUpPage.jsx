@@ -1,5 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import NavBar from "../../components/navBar/NavBar.jsx";
+import "./signUpPage.css";
 
 //This is a test
 
@@ -22,8 +24,10 @@ function RegisterPage() {
       }
     })
   }
-  return (
-    <div>
+  return (  
+  <>
+  <NavBar showSearch="noShow"/>  
+  <div>
    <h1>Sign up</h1>
    <form >
         <input
@@ -53,6 +57,7 @@ function RegisterPage() {
         />
       </form>
  </div>
+ </>
 
 
 
