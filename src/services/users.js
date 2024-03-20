@@ -17,6 +17,17 @@ export const login = async (credentials) => {
   }
 };
 
+export const signOut = async () => {
+  //error handling
+  if (localStorage.getItem("token") === null) {
+    throw new Error("No token found");
+  }
+
+  //remove token from local storage
+  localStorage.removeItem("token");
+  return true;
+};
+
 export const verify = async () => {
   //Error handling
   if (localStorage.getItem("token") === null) {
