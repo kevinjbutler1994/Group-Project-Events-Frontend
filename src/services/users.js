@@ -47,6 +47,7 @@ export const signOut = async () => {
   return true;
 };
 
+//this is a test
 export const verify = async () => {
   //Error handling
   if (localStorage.getItem("token") === null) {
