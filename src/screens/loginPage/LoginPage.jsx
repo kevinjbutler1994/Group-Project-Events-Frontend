@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import NavBar from "../../components/navBar/NavBar.jsx";
+import "./loginPage.css";
 
 function LoginPage() {
   let [login, setLogin] = useState({
@@ -19,7 +21,9 @@ function LoginPage() {
     })
   }
   return (
-    <div>
+  <>
+  <NavBar showSearch="noShow"/>
+  <div>
    <h1>Log in</h1>
    <form >
           <input
@@ -35,6 +39,7 @@ function LoginPage() {
         />
       </form>
     </div>
+    </>
   )
 }
 
