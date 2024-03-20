@@ -13,6 +13,18 @@
     z-index: 9999;
 }
 
+.logo {
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 6vh;
+    aspect-ratio: 1/1;
+    background-color: #233142;
+    border: none;
+    width: auto;
+}
+
 .helpBtn {
     background-image: url("../../../public/img/help.png");
     background-repeat: no-repeat;
