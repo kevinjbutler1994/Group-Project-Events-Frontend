@@ -1,29 +1,29 @@
 import React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 import NavBar from "../../components/navBar/NavBar.jsx";
 import "./signUpPage.css";
 
 //This is a test
 
 function RegisterPage() {
-  let [signup, setSignup] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirm:"",
-  })
+  // let [signup, setSignup] = useState({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  //   confirm:"",
+  // })
  
-  const handleChange = (signup) => {
-    let value = signup.target.value;
-    let name = signup.target.name;
+  // const handleChange = (signup) => {
+  //   let value = signup.target.value;
+  //   let name = signup.target.name;
  
-    setSignup((prevalue) => {
-      return {
-        ...prevalue,                 
-        [name]: value
-      }
-    })
-  }
+  //   setSignup((prevalue) => {
+  //     return {
+  //       ...prevalue,                 
+  //       [name]: value
+  //     }
+  //   })
+  // }
   return (  
   <>
   <NavBar showSearch="noShow"/>  
@@ -34,26 +34,26 @@ function RegisterPage() {
           type="text"
           placeholder="Type your name "
           name="name"
-          onChange={handleChange}
+          // onChange={handleChange}
           />
           <input
          type="text"
          placeholder="Type your email"
          name="email"
-         onChange={handleChange}
+        //  onChange={handleChange}
         />
 
        <input 
         type="text"
         placeholder="Create password"
         name="password"
-        onChange={handleChange}
+        // onChange={handleChange}
         />
         <input
         type="text"
         placeholder="Confirm pasword"
         name="confirm"
-        onChange={handleChange}
+        // onChange={handleChange}
         />
       </form>
  </div>

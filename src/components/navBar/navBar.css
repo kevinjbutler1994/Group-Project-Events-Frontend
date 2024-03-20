@@ -13,10 +13,10 @@
     z-index: 9999;
 }
 .logo {
-    background-image: url("");
+    /* background-image: url("");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: contain; */
     height: 6vh;
     aspect-ratio: 1/1;
     background-color: #233142;
