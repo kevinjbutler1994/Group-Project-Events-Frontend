@@ -1,13 +1,14 @@
 import React from 'react'
 import "./navBar.css"
 import { useNavigate } from 'react-router-dom';
+import SearchBar from '../searchBar/SearchBar.jsx';
 
 function NavBar() {
   const navigate = useNavigate()
   return (
     <div className='navBar'>
       <div className='logo'>Logo</div>
-      <div className='searchBar'>Search Bar</div>
+      <SearchBar  />
       <div className='navBarMenu'>
           <div className='computerOptions'>
             <button onClick={()=> navigate('/favorite') } className='navFavorites navBarMenuBtn'>Favorites</button>
