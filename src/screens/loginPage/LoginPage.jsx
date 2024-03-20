@@ -3,23 +3,23 @@ import NavBar from "../../components/navBar/NavBar.jsx";
 import "./loginPage.css";
 
 function LoginPage() {
-  let [login, setLogin] = useState({
-    email: "",
-    password: "",
+  // let [login, setLogin] = useState({
+  //   email: "",
+  //   password: "",
    
-  })
+  // })
  
-  const handleChange = (login) => {
-    let value = login.target.value;
-    let name = login.target;
+  // const handleChange = (login) => {
+  //   let value = login.target.value;
+  //   let name = login.target;
  
-    setSignup((prevalue) => {
-      return {
-        ...prevalue,                 
+  //   setSignup((prevalue) => {
+  //     return {
+  //       ...prevalue,                 
     
-      }
-    })
-  }
+  //     }
+  //   })
+  // }
   return (
   <>
   <NavBar showSearch="noShow"/>
@@ -29,13 +29,13 @@ function LoginPage() {
           <input
          type="text"
          placeholder="Type your email"
-         onChange={handleChange}
+//         onChange={handleChange}
         />
         
         <input
         type="text"
         placeholder="Type your pasword"
-        onChange={handleChange}
+//        onChange={handleChange}
         />
       </form>
     </div>
