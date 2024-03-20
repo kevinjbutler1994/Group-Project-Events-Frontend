@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 
+//This is a test
+
 function RegisterPage() {
   let [signup, setSignup] = useState({
     name: "",
