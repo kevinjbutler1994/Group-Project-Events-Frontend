@@ -1,18 +1,13 @@
 import React from 'react'
 import './searchBar.css'
-
-function SearchBar() {
+function SearchBar({showSearch}) {
   return (
-    <div className='searchBarContainer'>
+    <div className='searchBarContainer' id={showSearch}>
         <form className='searchBarForm'>
             <input className='searchBarInput' type='search' placeholder='Search...'></input>
             <div className='searchBarIcon'></div>
         </form>
     </div>
-    // <form id>
-    //     <input type='searchBar'></input>
-    // </form>
   )
 }
-
 export default SearchBar
