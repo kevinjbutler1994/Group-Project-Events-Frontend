@@ -11,7 +11,7 @@ import HelpPage from './screens/helpPage/HelpPage.jsx';
 import NavBar from './components/navBar/NavBar.jsx';
 import SignUpPage from './screens/signUpPage/signUpPage.jsx';
 import EditProfilePage from './screens/editProfilePage/EditProfilePage.jsx';
-
+import MultiFilters from './components/filters/Multifilters.jsx';
 
 // import EventPage from './screens/eventPage/EventPage.jsx';
 

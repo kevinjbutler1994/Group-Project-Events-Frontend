@@ -1,8 +1,10 @@
 import React from 'react'
+import MultiFilters from '../../components/filters/Multifilters'
 
 function SearchPage() {
   return (
-    <div>SearchPage</div>
+    <div>SearchPage</div>,
+    < MultiFilters />
   )
 }
 
