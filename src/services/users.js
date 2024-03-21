@@ -48,20 +48,14 @@ export const signOut = async () => {
 };
 
 export const verify = async () => {
-  // //error handling
-  // if (localStorage.getItem("token") === null) {
-  //   throw new Error("No token found");
-  // }
-  // //get token from local storage
-  // const token = localStorage.getItem("token");
-  // if (token) {
-  //   const res = await api.get("/auth/verify");
-  //   return res.data;
-  // }
+  //error handling
+  if (localStorage.getItem("token") === null) {
+    throw new Error("No token found");
+  }
+  //get token from local storage
   const token = localStorage.getItem("token");
   if (token) {
-    const res = await api.get("/verify");
+    const res = await api.get("/auth/verify");
     return res.data;
   }
-  return false;
 };
