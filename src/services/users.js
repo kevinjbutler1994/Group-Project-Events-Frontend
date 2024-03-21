@@ -5,7 +5,7 @@ export const login = async (credentials) => {
   try {
     const response = await api.post("/auth/login", credentials);
     localStorage.setItem("token", response.data.token);
-    const user = jwtDecode(response.data);
+    const user = jwtDecode(response.data.token);
     return user;
   } catch (error) {
     console.error("Login error:", error);
@@ -19,8 +19,8 @@ export const login = async (credentials) => {
 
 export const signUp = async (credentials) => {
   try {
-    console.log("registering", credentials); //TEST DEBUG
-    const response = await api.post("/auth/regist", credentials);
+    //console.log("registering", credentials); //TEST DEBUG
+    const response = await api.post("/auth/register", credentials);
     localStorage.setItem("token", response.data.token);
     const user = jwtDecode(response.data.token);
     return user;
@@ -47,17 +47,23 @@ export const signOut = async () => {
   return true;
 };
 
-//this is a test
 export const verify = async () => {
-  //Error handling
-  if (localStorage.getItem("token") === null) {
-    throw new Error("No token found");
-  }
+  // //error handling
+  // if (localStorage.getItem("token") === null) {
+  //   throw new Error("No token found");
+  // }
+  // //get token from local storage
+  // const token = localStorage.getItem("token");
+  // if (token) {
+  //   const res = await api.get("/auth/verify");
+  //   return res.data;
+  // }
 
-  //if token we will retrieve it
+  //get token from local storage
   const token = localStorage.getItem("token");
   if (token) {
-    const response = await api.get("/auth/verify");
-    return response.data;
+    const res = await api.get("/auth/verify");
+    return res.data;
   }
+  return false;
 };
