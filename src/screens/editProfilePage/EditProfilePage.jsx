@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import NavBar from "../../components/navBar/NavBar.jsx";
-import { verify, editUser } from "../../services/users.js";
+import { verify, editUser, deleteUser } from "../../services/users.js";
 import "./editProfilePage.css";
+import { useNavigate } from "react-router-dom";
 
 function EditProfilePage(props) {
+  const navigate = useNavigate();
+
   const { setUser } = props;
+
   let [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,7 +24,7 @@ function EditProfilePage(props) {
       }
     };
     userData();
-  }, []);
+  }, [setUser]);
 
   const handleChange = (event) => {
     setForm({
@@ -32,14 +36,25 @@ function EditProfilePage(props) {
   const onProfileUpdate = async (event) => {
     event.preventDefault();
     try {
-      const editedUser = await editUser({ ...form });
-      setUser(editedUser); // Update user context
+      const { user, token } = await editUser(form);
+      localStorage.setItem("token", token); // Update the stored token
+      setUser(user);
+      navigate("/profile");
     } catch (error) {
       console.error("Error editing user:", error);
     }
   };
 
-  const onProfileDelete = () => {};
+  const onProfileDelete = async () => {
+    await deleteUser();
+    localStorage.removeItem("token"); // Clear the token from local storage
+    setUser(null); // Clear the user state to reflect that the user is logged out
+    navigate("/login"); // Redirect to login or home page
+  };
+
+  const onProfileCancel = () => {
+    navigate("/");
+  };
 
   const { name, email } = form;
 
@@ -74,10 +89,9 @@ function EditProfilePage(props) {
             Delete
           </button>
         </form>
-        <button>Cancel</button>
+        <button onClick={onProfileCancel}>Cancel</button>
       </div>
     </>
   );
 }
-
 export default EditProfilePage;
