@@ -30,6 +30,7 @@ function LoginPage(props) {
     try {
       const user = await login(form);
       setForm(user);
+      setUser(user);
       navigate("/");
     } catch (error) {
       console.error(error);
