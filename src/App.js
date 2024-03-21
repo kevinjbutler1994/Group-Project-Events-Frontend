@@ -31,14 +31,14 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/search" element={<SearchPage />} /> 
-        <Route path="/favorite" element={<FavoritePage setUser={setUser} />} /> */}
+        <Route path="/search" element={<SearchPage />} /> 
+        <Route path="/favorite" element={<FavoritePage setUser={setUser} />} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
-        {/* <Route path="/profile" element={<ProfilePage setUser={setUser} />} />
+        <Route path="/profile" element={<ProfilePage setUser={setUser} />} />
         <Route path="/event" element={<EventPage />} />
-        <Route path="/help" element={<HelpPage />} /> */}
+        <Route path="/help" element={<HelpPage />} />
         <Route path="/signup" element={<SignUpPage setUser={setUser} />} />
-        {/* <Route path="/edit" element={<EditProfilePage setUser={setUser} />} /> */}
+        <Route path="/edit" element={<EditProfilePage setUser={setUser} />} />
       </Routes>
 
       <Menu />

@@ -1,5 +1,7 @@
+
 import React from 'react';
 import NavBar from "../../components/navBar/NavBar.jsx";
+import MultiFilters from "../../components/multiFilters/MultiFilters.jsx";
 import "./searchPage.css";
 
 function SearchPage() {
@@ -7,7 +9,9 @@ function SearchPage() {
     <>
     <NavBar showSearch="show"/>
     <div>SearchPage</div>
+    <MultiFilters/>
     </>
+
   )
 }
 
