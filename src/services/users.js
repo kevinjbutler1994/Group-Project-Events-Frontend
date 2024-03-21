@@ -19,7 +19,7 @@ export const login = async (credentials) => {
 
 export const signUp = async (credentials) => {
   try {
-    console.log("registering", credentials); //TEST DEBUG
+    //console.log("registering", credentials); //TEST DEBUG
     const response = await api.post("/auth/register", credentials);
     localStorage.setItem("token", response.data.token);
     const user = jwtDecode(response.data.token);
@@ -48,14 +48,22 @@ export const signOut = async () => {
 };
 
 export const verify = async () => {
-  //error handling
-  if (localStorage.getItem("token") === null) {
-    throw new Error("No token found");
-  }
+  // //error handling
+  // if (localStorage.getItem("token") === null) {
+  //   throw new Error("No token found");
+  // }
+  // //get token from local storage
+  // const token = localStorage.getItem("token");
+  // if (token) {
+  //   const res = await api.get("/auth/verify");
+  //   return res.data;
+  // }
+
   //get token from local storage
   const token = localStorage.getItem("token");
   if (token) {
     const res = await api.get("/auth/verify");
     return res.data;
   }
+  return false;
 };
