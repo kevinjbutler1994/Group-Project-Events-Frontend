@@ -67,3 +67,7 @@
         display: none;
     }
 }
+
+.yellowHelp {
+    background-image: url("../../../public/img/helpYellow.png");
+}
