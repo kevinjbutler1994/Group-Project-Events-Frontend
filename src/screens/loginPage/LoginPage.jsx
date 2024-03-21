@@ -63,7 +63,7 @@ function LoginPage(props) {
 
   return (
     <>
-      <NavBar showSearch="noShow" />
+      {/* <NavBar showSearch="noShow" /> */}
       <div className="loginContainer">
         <h1>Log in</h1>
         <form className="loginForm" onSubmit={onSignIn}>
