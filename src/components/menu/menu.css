@@ -49,7 +49,7 @@
 }
 
 .favoritesBtn:hover {
-    background-image: url("../../../public/img/favoritesYellow.png");
+    background-image: url("../../../public/img/favoritesRed.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -73,4 +73,17 @@
     .menu {
         display: none;
     }
+}
+
+.yellowHome {
+    background-image: url("../../../public/img/homeYellow.png");
+}
+.yellowSearch{
+    background-image: url("../../../public/img/searchYellow.png");
+}
+.yellowFavorite{
+    background-image: url("../../../public/img/favoritesRed.png");
+ }
+.yellowProfile{
+    background-image: url("../../../public/img/profileYellow.png");
 }
