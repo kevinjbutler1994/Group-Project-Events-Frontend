@@ -2,13 +2,12 @@ import React from 'react'
 import "./navBar.css"
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../searchBar/SearchBar.jsx';
-
-function NavBar() {
+function NavBar({showSearch}) {
   const navigate = useNavigate()
   return (
     <div className='navBar'>
       <div className='logo'>Logo</div>
-      <SearchBar  />
+      <SearchBar showSearch={showSearch}/>
       <div className='navBarMenu'>
           <div className='computerOptions'>
             <button onClick={()=> navigate('/favorite') } className='navFavorites navBarMenuBtn'>Favorites</button>
@@ -17,9 +16,7 @@ function NavBar() {
           </div>
           <button onClick={()=> navigate('/help') } className='helpBtn'></button>
       </div>
-
     </div>
   )
 }
-
 export default NavBar

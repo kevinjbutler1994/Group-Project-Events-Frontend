@@ -1,10 +1,15 @@
-import React from 'react'
-import MultiFilters from '../../components/filters/Multifilters'
+
+import React from 'react';
+import NavBar from "../../components/navBar/NavBar.jsx";
+import "./searchPage.css";
 
 function SearchPage() {
   return (
-    <div>SearchPage</div>,
-    < MultiFilters />
+    <>
+    <NavBar showSearch="show"/>
+    <div>SearchPage</div>
+    </>
+
   )
 }
 

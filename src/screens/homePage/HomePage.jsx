@@ -1,9 +1,12 @@
-import React from 'react'
-import "./homePage.css"
+import React from 'react';
+import "./homePage.css";
 import  EventCard  from "../../components/eventCard/EventCard.jsx";
+import NavBar from "../../components/navBar/NavBar.jsx";
 
 function HomePage() {
   return (
+    <>
+    <NavBar showSearch="show"/>
     <div className='home'>HomePage
       <div 
       className="col">
@@ -45,6 +48,7 @@ function HomePage() {
         />
       </div>
     </div>
+    </>
   )
 }
 
