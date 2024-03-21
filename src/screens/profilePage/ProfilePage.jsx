@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navBar/NavBar.jsx";
 import "./profilePage.css";
 import { Link } from "react-router-dom";
+import { signOut } from "../../services/users.js";
 
 function ProfilePage(props) {
+  const navigate = useNavigate();
+
   const { user } = props;
 
   const [userProfile, setUserProfile] = useState(user);
@@ -17,6 +21,15 @@ function ProfilePage(props) {
     return <div>Loading...</div>;
   }
 
+  const onLogout = async () => {
+    try {
+      await signOut(); // Call signOut to remove the token
+      navigate("/login"); // Navigate to login or any other appropriate path after logout
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+
   return (
     <>
       {/* <NavBar showSearch="noShow" /> */}
@@ -29,6 +42,7 @@ function ProfilePage(props) {
         <h1>{user.name}</h1>
         <p>{user.email}</p>
         <Link to={"/edit"}>Edit</Link>
+        <button onClick={onLogout}>Logout</button>
       </div>
     </>
   );
