@@ -8,9 +8,16 @@ import { signOut } from "../../services/users.js";
 function ProfilePage(props) {
   const navigate = useNavigate();
 
-  const { user } = props;
+  const { user, setUser } = props;
 
   const [userProfile, setUserProfile] = useState(user);
+
+  useEffect(() => {
+    // Redirect to login page if user is not authenticated
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
   // Update local state if the user prop changes
   useEffect(() => {
@@ -24,6 +31,7 @@ function ProfilePage(props) {
   const onLogout = async () => {
     try {
       await signOut(); // Call signOut to remove the token
+      setUser(null);
       navigate("/login"); // Navigate to login or any other appropriate path after logout
     } catch (error) {
       console.error("Logout error:", error);

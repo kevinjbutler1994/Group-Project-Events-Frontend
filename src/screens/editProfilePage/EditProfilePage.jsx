@@ -53,7 +53,7 @@ function EditProfilePage(props) {
   };
 
   const onProfileCancel = () => {
-    navigate("/");
+    navigate("/profile");
   };
 
   const { name, email } = form;

@@ -32,9 +32,12 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/favorite" element={<FavoritePage setUser={setUser} />} />
+        <Route path="/favorite" element={<FavoritePage user={user} />} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
-        <Route path="/profile" element={<ProfilePage user={user} />} />
+        <Route
+          path="/profile"
+          element={<ProfilePage user={user} setUser={setUser} />}
+        />
         <Route path="/event" element={<EventPage />} />
         <Route path="/help" element={<HelpPage />} />
         <Route path="/signup" element={<SignUpPage setUser={setUser} />} />
