@@ -12,11 +12,9 @@ const getToken = () => {
 const api = axios.create({
   baseURL:
     process.env.NODE_ENV === "production"
-      ? "https://sei-products-api.herokuapp.com"
+      ? "https://herokulink"
       : "http://localhost:3000",
 });
-
-console.log("api", api);
 
 api.interceptors.request.use(
   async function (config) {
