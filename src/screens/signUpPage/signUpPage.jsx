@@ -51,7 +51,7 @@ function RegisterPage(props) {
     try {
       const user = await signUp(form);
       setUser(user);
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       console.error(error);
       setForm({
