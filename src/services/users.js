@@ -47,6 +47,18 @@ export const signOut = async () => {
   return true;
 };
 
+export const deleteUser = async (credentials) => {};
+
+export const editUser = async (newUserData) => {
+  try {
+    const response = await api.put("/auth/edit", newUserData);
+    return response.data;
+  } catch (error) {
+    console.error("Error editing User: ", error);
+    throw error;
+  }
+};
+
 export const verify = async () => {
   // //error handling
   // if (localStorage.getItem("token") === null) {
