@@ -19,7 +19,8 @@ import "./eventPage.css";
 //   return <>{generateCardsFromData(boilerPlateData)}</>;
 // };
 
-function EventPage() {
+function EventPage({events}) {
+  console.log(events)
     return (
       <>
       <NavBar showSearch="noShow"/>
