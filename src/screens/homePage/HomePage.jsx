@@ -3,10 +3,10 @@ import "./homePage.css";
 import EventCard from "../../components/eventCard/EventCard.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
 
-function HomePage() {
+function HomePage({user}) {
   return (
     <>
-      <NavBar showSearch="show" />
+      <NavBar showSearch="show" user={user} />
       <div className="home">
         HomePage
         <div className="col">

@@ -6,9 +6,9 @@ function Menu() {
   const navigate = useNavigate();
 
   const [yellowHome, setYellowHome] = useState(true);
-  const [yellowSearch, setYellowSearch] = useState(false);
-   const [yellowFavorite, setYellowFavorite] = useState(false)
-   const [yellowProfile, setYellowProfile] = useState(false)
+  const [yellowSearch, setYellowSearch] = useState(true);
+   const [yellowFavorite, setYellowFavorite] = useState(true)
+   const [yellowProfile, setYellowProfile] = useState(true)
   const homeStyle = yellowHome
     ? "homeBtn menuBtn yellowHome"
     : "homeBtn menuBtn";

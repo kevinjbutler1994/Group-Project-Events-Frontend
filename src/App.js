@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage user={user} />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorite" element={<FavoritePage user={user} />} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
