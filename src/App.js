@@ -13,24 +13,33 @@ import EventPage from "./screens/eventPage/EventPage.jsx";
 import HelpPage from "./screens/helpPage/HelpPage.jsx";
 import SignUpPage from "./screens/signUpPage/signUpPage.jsx";
 import EditProfilePage from "./screens/editProfilePage/EditProfilePage.jsx";
-
+import { getEvents } from "./services/events.js";
 // import EventPage from './screens/eventPage/EventPage.jsx';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [events, setEvents] = useState([])
 
   useEffect(() => {
     const fetchUser = async () => {
       const user = await verify();
       user ? setUser(user) : setUser(null);
     };
-    fetchUser();
+    const getAllEvents = async () => {
+      const response = await getEvents()
+      setEvents(response)
+    }
+
+    getAllEvents()
   }, []);
+
+  console.log(events)
+
 
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage events={events}/>} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/favorite" element={<FavoritePage user={user} />} />
         <Route path="/login" element={<LoginPage setUser={setUser} />} />
