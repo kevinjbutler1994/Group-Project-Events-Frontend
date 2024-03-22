@@ -13,7 +13,7 @@ export const getFavorites = async () => {
 
 export const createFavorite = async (eventId) => {
   try {
-    const response = await api.get(`/favorite/add/${eventId}`);
+    const response = await api.post(`/favorite/add/${eventId}`);
     return response.data;
   } catch (error) {
     console.error("Error creating Favorite: ", error);
