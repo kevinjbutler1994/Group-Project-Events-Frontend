@@ -1,10 +1,10 @@
 import React from 'react';
 import "./helpPage.css";
 import NavBar from "../../components/navBar/NavBar.jsx";
-function HelpPage() {
+function HelpPage({user }) {
   return (
     <>
-    <NavBar showSearch="noShow"/>
+    <NavBar showSearch="noShow" user={user}/>
     <div className='helpPageContainer'>
       <h3 className='helpPageTitle'>Meet The Team</h3>
       <div className='collaboratorContainer'>
