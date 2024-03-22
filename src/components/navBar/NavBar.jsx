@@ -3,8 +3,8 @@ import { useState } from 'react';
 import "./navBar.css"
 import { useNavigate } from 'react-router-dom';
 import SearchBar from '../searchBar/SearchBar.jsx';
-function NavBar({showSearch}) {
-  const navigate = useNavigate()
+function NavBar({showSearch, handleChange, setSearchInput, searchInput}) {
+    const navigate = useNavigate()
   const [yellowHelp, setyellowHelp] = useState(false);
 
   const helpStyle = yellowHelp
@@ -14,7 +14,7 @@ function NavBar({showSearch}) {
   return (
     <div className='navBar'>
       <div className='logo'>Logo</div>
-      <SearchBar showSearch={showSearch}/>
+      <SearchBar showSearch={showSearch} handleChange={handleChange} setSearchInput={setSearchInput} searchInput={searchInput}/>
       <div className='navBarMenu'>
           <div className='computerOptions'>
             <button onClick={()=> navigate('/favorite') } className='navFavorites navBarMenuBtn'>Favorites</button>
