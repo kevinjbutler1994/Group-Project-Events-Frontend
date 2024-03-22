@@ -3,7 +3,17 @@ import "./homePage.css";
 import EventCard from "../../components/eventCard/EventCard.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
 
+
 function HomePage({events}) {
+
+
+const eventsPerPage = 8;  
+const indexOfLastEvent =  eventsPerPage;
+const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+
+
+
   console.log(events)
   return (
     <>
@@ -11,8 +21,7 @@ function HomePage({events}) {
       <div className="home">
         HomePage
         <div className="col">
-          {events.map((event) => {
-            {console.log(event)}
+          {currentEvents.map((event) => {
             return <EventCard
             id={event._id}
             imgSrc= {event.eventPicture}
@@ -23,6 +32,7 @@ function HomePage({events}) {
             description= {event.eventCity}
             buttonText="Learn More"
             linkToTicket={event.eventTickets}
+            key={event._id}
           />
           })}
         </div>
