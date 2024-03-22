@@ -1,5 +1,7 @@
 import React from "react";
 import {createFavorite} from "../../services/favorites.js";
+import "./eventCard.css"
+import { Link } from 'react-router-dom'
 
 // const EventCard = ({
   function EventCard({
@@ -51,21 +53,19 @@ import {createFavorite} from "../../services/favorites.js";
     // </div>
     // </div>
     <>
-         
-     <div className = 'card-div'>
-    <div className="card-container">
-    <img src={imgSrc}/>
-      <p>{title}</p>
-      <p>{`From $${minPrice} to $${maxPrice}`}</p>
-      <p>{date}</p>
-      <p>{description}</p>
-      <p>{buttonText}</p>
-      <p>{linkToTicket}</p>
-      <button onClick={onCreateFavorite}>Add to your favorites</button>
-    </div>
- 
-   </div>
+    <Link to={`/events/${id}`}>
+      <div className = 'card-div'>
+      <div className="card-container">
+      <img className="card-img" src={imgSrc}/>
+        <p className="card-title">{title}</p>
+        <p className="card-price">{`From $${minPrice} to $${maxPrice}`}</p>
+        <p className="card-date">{date}</p>
+        <p className="card-description">{description}</p>
+        <button className="card-btn" onClick={onCreateFavorite}>Add to your favorites</button>
+      </div>
   
+      </div>
+    </Link>
     </>
   );
 };
