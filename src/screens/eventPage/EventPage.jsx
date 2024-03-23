@@ -1,31 +1,37 @@
-import React from "react";
+import {useState,useEffect} from "react";
 import NavBar from "../../components/navBar/NavBar.jsx";
 import "./eventPage.css";
-// import { boilerPlateData } from "./data.js";
-
-// export default () => {
-//   const generateCardsFromData = collection => {
-//     return collection.map(item => {
-//       return (
-//         <div key={item.id}>
-//           <h2>{item.name}</h2>
-//           <h4>{item.price}</h4>
-//           <p>{item.description}</p>
-//         </div>
-//       );
-//     });
-//   };
-
-//   return <>{generateCardsFromData(boilerPlateData)}</>;
-// };
+import { getEvent } from "../../services/events.js";
+import { useParams } from "react-router-dom";
 
 function EventPage() {
+  const [event, setEvent] = useState({})
+  let {id} = useParams()
+
+  const fetchEvent = async () => {
+  const oneEvent = await getEvent(id)
+  setEvent(oneEvent)
+  }
+
+useEffect(() => {
+    fetchEvent()
+}, [])
+
+console.log(event)
     return (
       <>
-      <NavBar showSearch="noShow"/>
-      <div>EventPage</div>
+       <NavBar showSearch="noShow"/>
+       <div className="eventPageContainer">
+          <img className="eventPageImage" src={event.eventPicture}></img>
+          <p>Name: {event.eventName}</p>
+          <p>Date and Time: {event.eventDate} {event.eventTime}</p>
+          <p>Venue: {event.eventVenue}</p>
+          <p>Price Min - Max: ${event.eventMinPrice} - ${event.eventMaxPrice}</p>
+          <button className="eventPageLink">
+           <a href={event.eventTickets}>Buy Here</a>
+          </button>
+       </div>
       </>
     )
   }
-  
   export default EventPage

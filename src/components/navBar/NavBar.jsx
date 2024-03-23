@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./navBar.css";
 import { useNavigate } from "react-router-dom";
@@ -32,6 +33,7 @@ function NavBar({ showSearch }) {
           </button>
         </div>
         <button onClick={() => navigate("/help")} className="helpBtn"></button>
+
       </div>
     </div>
   );
