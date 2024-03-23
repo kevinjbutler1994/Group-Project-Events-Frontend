@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./navBar.css";
 import { useNavigate, NavLink } from "react-router-dom";
@@ -6,6 +7,7 @@ import { signOut } from "../../services/users.js";
 
 function NavBar({ showSearch, user }) {
   const navigate = useNavigate();
+
   const [yellowHelp, setyellowHelp] = useState(false);
 
   const helpStyle = yellowHelp
@@ -68,6 +70,7 @@ function NavBar({ showSearch, user }) {
   )
 
   return (
+
     <div className="navBar">
 
       <NavLink to="/">
@@ -79,6 +82,7 @@ function NavBar({ showSearch, user }) {
           {user ? authenticated : unauthenticated}
         </div>
           {alwaysOptions}
+
       </div>
     </div>
   );

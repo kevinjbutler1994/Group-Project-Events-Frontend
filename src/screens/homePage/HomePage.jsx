@@ -2,12 +2,14 @@ import React from "react";
 import "./homePage.css";
 import EventCard from "../../components/eventCard/EventCard.jsx";
 import NavBar from "../../components/navBar/NavBar.jsx";
+import {useState, useEffect} from 'react'
 
 function HomePage({ events, user, favorites, setToggle }) {
   const eventsPerPage = 8;
   const indexOfLastEvent = eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
   const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+
 
   return (
     <>
@@ -35,6 +37,7 @@ function HomePage({ events, user, favorites, setToggle }) {
                 setToggle={setToggle}
               />
             );
+
           })}
         </div>
       </div>
